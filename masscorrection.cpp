@@ -1,8 +1,5 @@
 /*
- * transport.cc: example driver for mass corrected transport
- *
- *  Created on: Oct 10, 2014
- *      Author: Christian Waluga (waluga@ma.tum.de)
+
  */
 /*
  * Modified to compare with boussinesq.cc
