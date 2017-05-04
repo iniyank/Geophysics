@@ -1,0 +1,51 @@
+# definition of the benchmark problem
+string benchmark = "Mass correction benchmark: transport constant"
+string meshfile = "../../data/grids/12el_tet.ugm"
+# ux*iHat + uy*jHat + uz*kHat
+string solutionx = "sin(2*pi*x)*cos(pi*y)"
+string solutiony = "-2*sin(pi*y)*cos(2*pi*x)"
+string solutionz = "0.0"
+string pressure = "2.5*cos(2*pi*x)*cos(pi*y)"
+string forcingx = "pi*(-5.0+5*pi)*sin(2*pi*x)*cos(pi*y)"
+string forcingy = "-pi*(2.5+10*pi)*sin(pi*y)*cos(2*pi*x)"
+string forcingz = "0"
+
+# initial concentration
+string c0 = "1"
+
+# simulation end time
+double tend = .3
+
+# CFL constant to be enforced
+double ccfl = .5
+
+# do or don't use mass corrected fluxes
+bool correct_fluxes = true
+
+# solver parameters
+bool multilevel_stab = false
+int minlevel = 2
+int maxlevel = 3
+int outer_iterations = 50
+int inner_iterations = 5
+int nu_pre = 3
+int nu_post = 3
+int gamma = 1
+string smoother = "GS"
+double relaxation_factor = 1.0
+int nu_coarse = 20
+int coarse_solver = "CG"
+
+#string vtkoutput = "end"
+##int vtkoutput.level = 4
+#int vtkoutput.every = 10
+
+string vtkoutput = "all"
+#int vtkoutput.level = 4
+int vtkoutput.every = 10
+string vtkoutput.directory = "/simdata/se07lase/ts_50"
+
+
+#string vtkoutput.directory = "/scratch/se07lase/ts_50"
+#string vtkoutput.directory = "/home/stud/se07lase/terraneo/drivers/bin"
+
